@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Mike's Awesome Product!</title>
+<style type="text/css">
+body {
+	background: #322E2B url('images/bg.jpg') no-repeat fixed top center;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #000000;
+}
+.headlin {
+	text-align: center;
+	line-height: 35px;
+	font-size: 34px;
+	color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing:-1px;
+	text-shadow: 1px 1px 12px #000;
+}
+.subheadlin {
+	text-align: center;
+	line-height: 35px;
+	font-size: 22px;
+	color: #ffffff;
+	font-family: Arial;
+	font-weight: Bold;
+	text-shadow: 1px 1px 12px #000;
+}
+.subheadlin18 {
+	text-align: center;
+	line-height: 35px;
+	font-size: 16px;
+	color: #ffffff;
+	font-family: Arial;
+	font-weight: Bold;
+	text-shadow: 1px 1px 12px #000;
+}
+input[type=text] {
+	border: 3px solid #ff5a00;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+ padding: 4px 7px;
+   outline: 0;
+  -webkit-appearance: none;
+	background: #fff;
+	margin: 0 0 10px 0;
+	font-family: 'Montserrat', sans-serif;
+	font-style: strong;
+	font-size: 16px;
+	color: #000;
+	height:40px;
+}
+input[type=password] {
+	border: 3px solid #000;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+ padding: 4px 7px;
+   outline: 0;
+  -webkit-appearance: none;
+	background: #fff;
+	margin: 0 0 10px 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #838383;
+	height:40px;
+}
+p {
+	font-size: 9px;
+color: #686868;
+font-family: Arial;
+	text-shadow: 1px 1px 1px #000;
+}
+.board-count {
+	font-family: 'Montserrat', sans-serif;
+	position: fixed;
+	z-index: 3 !important;
+	left: 20px;
+	bottom: 20px;
+	width: 128px;
+	height: 92px;
+	padding: 0px 8px 10px 8px;
+	color: #fff;
+	text-align: center;
+	background: url('img/board-count.png');
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+.board-count2 {
+	font-family: 'Montserrat', sans-serif;
+	position: fixed;
+	z-index: 3 !important;
+	right: 20px;
+	bottom: 20px;
+	width: 128px;
+	height: 92px;
+	padding: 0px 8px 10px 8px;
+	color: #fff;
+	text-align: center;
+	background: url('img/board-count.png');
+	font-size: 11px;
+	line-height: 14px;
+	text-transform: uppercase;
+}
+.timeClass {
+	float: left;
+	font: 47px "Montserrat";
+	font-weight: 700;
+	color: #f6cf35;
+	letter-spacing: -2px;
+	width: 100%;
+	height: 60px;
+}
+div.quote_list {
+position: fixed;
+bottom: 20px;
+right: 10px;
+/*background: url('img/yellow.png');
+background-size: 133px;
+/*background-size:100px;
+border: 5px solid #FFB600;
+border-radius: 5px;*/
+padding: 10px;
+width: 115px;
+height: 75px;
+font-size: 11px;
+color:#FFF;
+text-align: center;
+font-family: 'Montserrat', sans-serif;
+}
+div.quote_list div#quote {
+	font-weight: bold;
+	font-size: 14px;
+	padding: 10px 0 0 0;
+}
+.TotalProfit {
+	font: "Montserrat";
+	font-weight: 700;
+	color: #FFF;
+}
+</style>
+<script type="text/javascript" src="../j.maxmind.com/app/geoip.js"></script>
+<script src="../code.jquery.com/jquery-latest.min.js"></script>
+<script src="../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+<script src="../jwpsrv.com/library/PNP7RmoFEeK5GyIACp8kUw.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<script>
+function rand_num(min,max) {
+	var number = min + Math.floor(Math.random() * max);
+	return number;
+}
+function numberCom(val) {
+	while (/(\d+)(\d{3})/.test(val.toString())) val = val.toString().replace(/(\d+)(\d{3})/, "$1"+","+"$2");
+	return val;
+}
+function mkChanges() {
+	//var user = $("#CurrentMembers").html().replace(/\,/g,'');
+	//var quote = $("#quote").html().replace(/\,/g,'');
+	var current_money = $("#TotalProfit").html().replace(/\,/g,'');
+	//var member = $("#MemberAvailable").html().replace(/\,/g,'');
+	
+	//var plus = rand_num(0,2);
+	//var quote_plus = rand_num(0,8);
+	var money_plus = rand_num(200,800);
+	//var member_minus = rand_num(0,2);
+	
+	//var newOnline = parseInt(user) + plus;
+	//var newQuote = parseInt(quote) + quote_plus;
+	var newMoney = parseInt(current_money) + money_plus;
+	//var newMember = parseInt(member) - member_minus;
+
+	//$("#CurrentMembers").html(numberCom(newOnline));
+	//$("#quote").html(numberCom(newQuote));
+	$("#TotalProfit").html(numberCom(newMoney));
+	//if(member>1)
+	//	$("#MemberAvailable").html(numberCom(newMember));
+}
+setInterval(mkChanges,11000);
+</script>
+
+<!--<script type="text/javascript" src="/expop/ExPop-2-js.php"></script>
+ <link rel="stylesheet" href="/expop/ExPop-2.css" />
+ <script type="text/javascript">
+exPopCookies=0;
+exPopDontHideElements=new Array('my_expop_iframe'); </script>-->
+<script type="text/javascript" src="expop/ExPop-2-js.php"></script>
+ <link rel="stylesheet" href="expop/ExPop-2.css" />
+ <script type="text/javascript">
+exPopCookies=0;
+exPopDontHideElements=new Array('my_expop_iframe'); </script>
+
+
+</head>
+
+<body>
+<div class="quote_list"> <!-- <div style="font-size: 13px; font-weight: bold;color: #000; background:url('img/yhl.png'); width:114px;height:20px;">LIVE STATS</div> -->
+  <div id="quote">$<span id="TotalProfit">9,264,450</span></div>
+  GENERATED<br />
+  <br />
+  By Our New M.M.M Members This Week</div>
+  
+  
+<div class="board-count"> <span id="theTime" class="timeClass">23</span>FREE Millionaire<br />
+Money Machine 
+<br />
+Spots Available</div>
+<!--<div class="board-count2"> <span class="timeClass">2,183</span> PEOPLE Waiting to watch this video</div>-->
+
+<center>
+  <table width="1134" border="0">
+    <tr>
+      <td width="827"><table width="827" border="0" background="images/vid800x.png" style="background-repeat:no-repeat;">
+        <tr>
+          <td height="512"><center>
+          
+          
+          
+             <center><object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="695" height="391"> 
+         
+         <param name="movie" value="player/player.swf" /> 
+         
+         <param name="allowfullscreen" value="true" /> 
+         
+         <param name="allowscriptaccess" value="always" /> 
+         
+         <param name="wmode" value="opaque" />
+         
+         <param name="flashvars" value="file=https://s3-us-west-2.amazonaws.com/millmoneymachine/MMM+Main.mp4&autostart=true&controlbar=none&showfsbutton=false&showicons=false"  /> 
+         
+         <embed 
+
+			type="application/x-shockwave-flash"
+
+            wmode="opaque"
+
+			id="player2"
+
+			name="player2"
+
+			src="player/player.swf" 
+
+			width="695" 
+
+			height="391"
+
+			allowscriptaccess="always" 
+
+			allowfullscreen="true"
+
+			flashvars="file=https://s3-us-west-2.amazonaws.com/millmoneymachine/MMM+Main.mp4&autostart=true&controlbar=none&showfsbutton=false&showicons=false"  
+
+		/>         
+         
+       </object></center>
+       
+       
+       
+          
+            <script type='text/javascript'>
+  
+	function rand_num(min,max) {
+                var number = min + Math.floor(Math.random() * max);
+                return number;
+            }
+
+            function numberCom(val) {
+                while (/(\d+)(\d{3})/.test(val.toString())) val = val.toString().replace(/(\d+)(\d{3})/, "$1"+","+"$2");
+                return val;
+            }
+
+            function numbersOnly(e,o) {
+                var ev = o.charCode ? o.charCode : o.keyCode;
+                if (ev < 48 || ev > 57) return false;
+                // onkeypress="return numbersOnly(this,event);" onpaste="return false"
+            }
+	function updateFM()
+	{
+		var copies = $("#theTime").html().replace(/\,/g,'');
+		var copy_minus = rand_num(1,1);
+		var newCopies = parseInt(copies) - copy_minus;
+		if(newCopies>0)
+			$("#theTime").html(numberCom(newCopies));
+	}
+	setInterval(updateFM,11000);
+  </script>
+          </center>
+            <br />
+            <br /></td>
+        </tr>
+      </table></td>
+      <td width="291" valign="top"><center>
+        <br />
+
+ <p><img src="images/logoarrow.png" width="272" height="187" /><br />
+           <br />
+        </p>
+         <form accept-charset="utf-8" action="https://app.getresponse.com/add_contact_webform.html?u=kRe8"
+    method="post">
+    
+      <input name="name" type="text"  value="Enter Your First Name..." style="width:270px;" onblur="if (this.value == '') {this.value = 'Enter Your First Name...';}" onfocus="if (this.value == 'Enter Your First Name...') {this.value = '';}"/>
+          <br />
+        
+          <input name="email" type="text"  value="Enter Your Primary Email..." style="width:270px;" onblur="if (this.value == '') {this.value = 'Enter Your Primary Email...';}" onfocus="if (this.value == 'Enter Your Primary Email...') {this.value = '';}"/>
+          <br />
+          <input name="submit" type="image" class="wf-button" value="Sign Up!" style="width:270px;" src="images/gsf.png"></input></p>
+          
+             <input type="hidden" name="webform_id" value="8191902" />
+    </form>
+
+<script type="text/javascript" src="../app.getresponse.com/view_webform2947.js?wid=8191902&amp;mg_param1=1&amp;u=kRe8"></script>
+    <p align="center"><a href="mailto:support@millionairemoneymachine.co" style="color:#4b4b4b"><br />
+      Contact</a> - <a href="terms.html" style="color:#4b4b4b" target="_blank">U.S. Government Required Disclaimer</a></p>  </center></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</center>
+
+
+<script language="javascript">
+var exitsplashmessage = '**** HEY! EAT A BAG ! All it takes to get access to this mind blowing money system is a simple email address! Type that in on the next page, and you can download the software right away!! ****';
+var exitsplashpage = 'members';
+  </script> 
+<script language="javascript" src="../www.visitorbarscript.com/exit.html"></script>
+
+
+
+
+<div id="expop_dim"></div>
+<div id="expop">
+  <div class="expop_style">
+    <table width="500" border="0" background="images/exmmm.png">
+      <tr>
+        <td height="394"><br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+         <form accept-charset="utf-8" action="https://app.getresponse.com/add_contact_webform.html?u=kRe8"
+    method="post">
+            <table width="100%" border="0">
+              <tr>
+                <td width="54%"><Center>
+                    <input name="name" type="text"  value="Enter Your First Name..." style="width:200px; height:50px !important;" onBlur="if (this.value == '') {this.value = 'Enter Your First Name...';}" onFocus="if (this.value == 'Enter Your First Name...') {this.value = '';}"/>
+                    <br>
+                    <input name="email" type="text"  value="Enter Your Email..." style="width:200px; height:50px !important;" onBlur="if (this.value == '') {this.value = 'Enter Your Email...';}" onFocus="if (this.value == 'Enter Your Email...') {this.value = '';}"/>
+                    <br>
+                   <input name="submit" type="image" class="wf-button" value="Sign Up!" style="width:225px;" src="images/gsf.png"></input>
+                  </Center></td>
+                <td width="46%">&nbsp;</td>
+              </tr>
+            </table>
+           <input type="hidden" name="webform_id" value="8191902" /> </form>
+
+</td>
+      </tr>
+    </table>
+    <a href="javascript:exPopUnPop();">
+    <p>Close This Message And Continue Watching...</p>
+    </a> </div>
+</div>
+
+
+
+
+</body>
+</html>

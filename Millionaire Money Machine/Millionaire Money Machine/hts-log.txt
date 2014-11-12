@@ -1,0 +1,13 @@
+HTTrack3.48-19+htsswf+htsjava launched on Mon, 10 Nov 2014 20:23:42 at http://www.millionairemoneymachine.co/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://www.millionairemoneymachine.co/ -O1 "C:\Users\Sregge\Desktop\Millionaire Money Machine\Millionaire Money Machine" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+20:24:25	Error: 	"Forbidden" (403) at link www.visitorbarscript.com/exit.js (from www.millionairemoneymachine.co/)
+20:24:25	Error: 	"Not Found" (404) at link www.millionairemoneymachine.co/no (from app.getresponse.com/view_webform.js?wid=8191902&mg_param1=1&u=kRe8)
+
+HTTrack Website Copier/3.48-19 mirror complete in 43 seconds : 20 links scanned, 17 files written (1164617 bytes overall) [1053519 bytes received at 24500 bytes/sec], 187500 bytes transferred using HTTP compression in 4 files, ratio 36%, 1.3 requests per connection
+(2 errors, 0 warnings, 0 messages)

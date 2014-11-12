@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.millionairemoneymachine.co	TRUE	/	FALSE	1999999999	PHPSESSID	dee29db4e78ba024f32b8a4329f20335
+.maxmind.com	TRUE	/	FALSE	1999999999	__cfduid	d4475b0fe5aa6c921b7cf42dcb7f09c471415670383563
+
